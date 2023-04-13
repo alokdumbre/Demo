@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    environment {
+        name = 'Alok'
+    }
+    parameters {
+        string(name:'Name', defaultValue: 'Alok Dumbre',description: 'Enter the username')
+        booleanParam(name:'Male', defaultValue: true, description: 'select the Gender')
+        choice(name:'City', choices: ['Mumbai','Pune','Delhi'], description: 'select the City')
+    }
+    stages {
+        stage('basic shell commands') {
+            steps {
+                sh '''
+                echo "These are few shell commands"
+                date
+                cal
+                pwd
+                '''
+                sh 'echo $name' 
+                
+            }
+        }
+        stage('environmental variables') {
+            environment {
+                username = 'Arush'
+            }
+            steps {
+                sh 'echo $BUILD_ID'
+                sh 'echo $username'
+            }
+        }
+        stage('environmental usernames') {
+            steps {
+                sh 'echo $BUILD_ID'
+                
+            }
+        }
+        stage('parameters') {
+            steps {
+                sh 'echo $Name'
+                
+            }
+        }
+    }
+}
