@@ -14,6 +14,9 @@ pipeline {
                 message "Should we continue?"
                 ok "Yes, we should."
                  }
+                 steps {
+                    echo "Agreed to continue"
+                    }
             }
         stage('basic shell commands') {
             steps {
