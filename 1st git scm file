@@ -4,7 +4,7 @@ pipeline {
         name = 'Alok'
     }
     parameters {
-        string(name:'Username', defaultValue: 'Alok Dumbre',description: 'Enter the username')
+        string(name:'person', defaultValue: 'Alok Dumbre',description: 'Enter the username')
         booleanParam(name:'Male', defaultValue: true, description: 'select the Gender')
         choice(name:'City', choices: ['Mumbai','Pune','Delhi'], description: 'select the City')
     }
@@ -47,7 +47,7 @@ pipeline {
         }
         stage('parameters') {
             steps {
-                sh 'echo $Username' 
+                sh 'echo $person' 
             }
         }
     }
