@@ -13,6 +13,7 @@ pipeline {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
+                 }
             }
         stage('basic shell commands') {
             steps {
@@ -55,6 +56,5 @@ pipeline {
         failure { 
             echo 'I will run only when any above stage fails'
         }
-    }
-          
+    }         
 }
