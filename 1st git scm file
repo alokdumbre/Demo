@@ -44,11 +44,11 @@ pipeline {
         }
         post{
             always {
-            echo 'I will always run'
-            }
+                     echo 'I will always run'
+                   }
             failure {
-            echo 'i will run only during failure of any above scenerio'
-            }
+                    echo 'i will run only during failure of any above scenerio'
+                    }
             }
     }
 }
