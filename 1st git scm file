@@ -47,7 +47,7 @@ pipeline {
         }
         stage('parameters') {
             steps {
-                sh 'echo $person' 
+                sh 'echo "${person}"' 
             }
         }
     }
